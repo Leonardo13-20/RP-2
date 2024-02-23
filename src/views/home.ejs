@@ -1,0 +1,96 @@
+<%- include('partials/_header') %>
+
+
+<div class="container container-sm ">
+  <div class="row mt-5">
+    <!--tabla de registro-->
+    <div class="col-md-7">
+        <table class="table table-dark table-hover">
+            <thead>
+                <tr  >
+                    <th>NUMERO</th>
+                    <th>NOMBRE</th>
+                    <th>DIRECCION</th>
+                    <th>TELEFONO</th>
+                    <th>ACCIONES</th>
+                </tr>
+            </thead>
+            <tbody class="table">
+                <% if(data) { %>
+                    <% for(let i=0; i<data.length; i++){ %>
+                        <tr class="mb-3">
+                            <td ><center><%=i+1%></center></td>
+                            <td><center><%=data[i].name%></center></td>
+                            <td><center><%=data[i].addres%></center></td>
+                            <td><center><%=data[i].phone%></center></td>
+                            <td class="d-flex flex-row justify-content-center">
+                                <a calss="icon-link" href="/delete/<%=data[i].id%>" alt="eliminar" >   
+                                    <i class="fa-solid fa-trash-can"></i>
+                                   
+                                </a>
+                               
+                                <a class="icon-link " href="/editCustomer/<%=data[i].id%>" alt="editar">
+                                    <svg class="bi" aria-hidden="true"><use xlink:href="#box-seam"></use></svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="25" width="25" viewBox="0 0 576 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M0 64C0 28.7 28.7 0 64 0H224V128c0 17.7 14.3 32 32 32H384V299.6l-94.7 94.7c-8.2 8.2-14 18.5-16.8 29.7l-15 60.1c-2.3 9.4-1.8 19 1.4 27.8H64c-35.3 0-64-28.7-64-64V64zm384 64H256V0L384 128zM549.8 235.7l14.4 14.4c15.6 15.6 15.6 40.9 0 56.6l-29.4 29.4-71-71 29.4-29.4c15.6-15.6 40.9-15.6 56.6 0zM311.9 417L441.1 287.8l71 71L382.9 487.9c-4.1 4.1-9.2 7-14.9 8.4l-60.1 15c-5.5 1.4-11.2-.2-15.2-4.2s-5.6-9.7-4.2-15.2l15-60.1c1.4-5.6 4.3-10.8 8.4-14.9z"/></svg>
+                                    
+                                </a>
+                            
+                                
+                            </td>
+                        </tr>
+                  <%  }%>
+                <%} else {%>
+                        <div class="alert alert-info">
+                            <h3>no hay resultados</h3>
+                        </div>
+                    <%}%>
+            </tbody>
+        </table>
+
+        <!--Paginador NEXT-->
+        <nav aria-label="...">
+            <ul class="pagination pagination-lg">
+                
+               <%if(!data.length){%>
+                <div class="alert alert-info">
+                    <h3>no hay resultados</h3>
+                </div>
+                <%}%>
+             
+              <li class="page-item "><a class="page-link" href="/?cursor=0">Atras</a></li>
+              <li class="page-item active "><a class="page-link" href="/?cursor=<%=cursor%>">Ver Mas...</a></li>
+            </ul>
+        </nav>
+          
+          
+    </div>
+    <!--formulario-->
+    <div class="col-md-5">
+        <div class="card">
+            <div class="card-body">
+                <form action="/add" method="post">
+                    <!--capturando nombre-->
+                    <div class="form-group mt-4">
+                        <input type="text" name="name" id="nombre" placeholder="nombre" class="form-control">
+                    </div>
+                    <!--capturando direccion-->
+                    <div class="form-group mt-4">
+                        <input type="text" name="addres" id="direccion" placeholder="direccion" class="form-control">
+                    </div>
+                    <!--capturando phone(telfono)-->
+                    <div class="form-group mt-4">
+                        <input type="text" name="phone" id="phone" placeholder="phone" class="form-control">
+                    </div>
+                    <div class="form-group mt-4">
+                        <button type="submit"  class="btn btn-primary">Agregar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+
+
+<%- include('partials/_footer') %>

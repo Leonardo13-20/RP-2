@@ -1,0 +1,28 @@
+<%- include('partials/_header') %>
+
+
+<div class="container d-flex justify-content-center mt-5">
+    <div class="card w-50 ">
+        <div class="card-body">
+            <form action="/update/<%= data[0].id %>" method="post">
+                <!--capturando nombre-->
+                <div class="form-group mt-4">
+                    <input type="text" name="acount" id="nombre" placeholder="nombre" class="form-control" value="<%= data[0].acount %>">
+                </div>
+                <!--capturando direccion-->
+                <div class="form-group mt-4">
+                    <input type="text" name="email" id="direccion" placeholder="direccion" class="form-control" value="<%= data[0].email %>">
+                </div>
+                <!--capturando phone(telfono)-->
+                <div class="form-group mt-4">
+                    <input type="text" name="password" id="phone" placeholder="phone" class="form-control" value="<%= data[0].password %>">
+                </div>
+                <div class="form-group mt-4">
+                    <button type="submit"  class="btn btn-primary">Editar</button>
+                </div>
+            </form>
+        </div>
+</div>
+
+    
+<%- include('partials/_footer') %>

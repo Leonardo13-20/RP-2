@@ -257,19 +257,19 @@ controller.updateUser = (req, res) => {
   }
 };
 
-controller.registrar = async (req, res) => {
+controller.registrar = (req, res) => {
   try {
-    await res.render("registrar", { mensaje: null });
+    res.render("registrar", { mensaje: null });
   } catch (error) {
     console.error("Error:", error);
     res.render("notFound", { error });
   }
 };
 
-controller.addUsuario = async (req, res) => {
+controller.addUsuario =  (req, res) => {
   const data = req.body; // datos del formulario
 
-  await req.getConnection((err, conn) => {
+   req.getConnection((err, conn) => {
     //VERIFICO SI EXISTE EL USUARIO
     conn.query(
       `SELECT * FROM ${user} WHERE email = ?`,
@@ -308,16 +308,16 @@ controller.addUsuario = async (req, res) => {
   cuenta = "";
 };
 
-controller.pageInicioSeccion = async (req, res) => {
-  await res.render("login", { msm: null });
+controller.pageInicioSeccion = (req, res) => {
+   res.render("login", { msm: null });
 };
 
 //autenticando al usuario
-controller.login = async (req, res) => {
+controller.login =  (req, res) => {
   //datos del formulario
   const { email, password } = req.body;
 
-  await req.getConnection((err, conn) => {
+ req.getConnection((err, conn) => {
     if (!err) {
       conn.query(
         `SELECT * FROM ${user} WHERE email = ?`,
@@ -342,7 +342,7 @@ controller.login = async (req, res) => {
               res.redirect(req.session.cookie.path);
             } else {
               console.log("El usuario no pudo iniciar seccion: ", users[0]);
-              await res.render("login", {
+                res.render("login", {
                 msm: "Email o/ contraseña incorrecta",
                 type: "warning",
               });

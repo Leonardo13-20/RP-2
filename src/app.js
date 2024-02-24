@@ -28,7 +28,7 @@ app.use(
   myConnection(
     mysql,
     {
-      host: "000Webhost.com",
+      host: "https://databases.000webhost.com",
       user: "id21425470_leonardophp",
       password: "Leo1320**",
       port: 3306,

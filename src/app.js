@@ -28,7 +28,7 @@ app.use(
   myConnection(
     mysql,
     {
-      host: "databases.000webhost.com",
+      host: "databases.000webhost",
       user: "id21425470_leonardophp",
       password: "Leo1320**",
       port: process.env.PORT,

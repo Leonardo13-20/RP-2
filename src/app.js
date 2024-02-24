@@ -28,7 +28,7 @@ app.use(
   myConnection(
     mysql,
     {
-      host: "apogeal-pack.com",
+      host: "000Webhost.com",
       user: "id21425470_leonardophp",
       password: "Leo1320**",
       port: 3306,

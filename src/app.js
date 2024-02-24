@@ -31,7 +31,7 @@ app.use(
       host: "databases.000webhost.com",
       user: "id21425470_leonardophp",
       password: "Leo1320**",
-      port: process.en.PORT,
+      port: process.env.PORT,
       database: "id21425470_leonardo",
     },
     "single"

@@ -6,7 +6,7 @@ const morgan = require("morgan");
 const mysql = require("mysql");
 const myConnection = require("express-myconnection");
 const app = express();
-const port = process.env.PORT || 3000;
+const port =  3000;
 
 //importando rutas
 
@@ -28,7 +28,7 @@ app.use(
   myConnection(
     mysql,
     {
-      host: "https://databases.000webhost.com",
+      host: "databases.000webhost.com",
       user: "id21425470_leonardophp",
       password: "Leo1320**",
       port: 3306,

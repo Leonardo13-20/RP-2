@@ -268,7 +268,7 @@ controller.registrar = (req, res) => {
 
 controller.addUsuario =  (req, res) => {
   const data = req.body; // datos del formulario
-
+console.log("registro", data);
    req.getConnection((err, conn) => {
     //VERIFICO SI EXISTE EL USUARIO
     conn.query(

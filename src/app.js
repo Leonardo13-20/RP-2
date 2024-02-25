@@ -31,7 +31,7 @@ app.use(
       host: "localhost",
       user: "id21425470_leonardophp",
       password: "Leo1320**",
-      
+      port: 3306,
       database: "id21425470_leonardo",
     },
     "single"

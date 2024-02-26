@@ -28,11 +28,11 @@ app.use(
   myConnection(
     mysql,
     {
-      host: "localhost",
-      user: "root",
-      password: "",
+      host: "baaomllbvlsrps3vlh3w-mysql.services.clever-cloud.com",
+      user: "u5obpnandvtvoz79",
+      password: "d9eGcxpoejw3JKFLAmsL",
       port: 3306,
-      database: "repo_password",
+      database: "baaomllbvlsrps3vlh3w",
     },
     "single"
   )

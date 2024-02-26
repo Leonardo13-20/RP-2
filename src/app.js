@@ -29,10 +29,10 @@ app.use(
     mysql,
     {
       host: "localhost",
-      user: "id21425470_leonardophp",
-      password: "Leo1320**",
+      user: "root",
+      password: "",
       port: 3306,
-      database: "id21425470_leonardo",
+      database: "repo_password",
     },
     "single"
   )
